@@ -16,6 +16,8 @@ case $1 in
         echo "==================== Start Hadoop Cluster ===================="
         echo "-------------------- start hdfs --------------------"
         ssh server1 "/opt/modules/hadoop-3.2.2/sbin/start-dfs.sh"
+        echo "-------------------- start httpfs --------------------"
+        ssh server1 "hdfs --daemon start httpfs"
         echo "-------------------- start yarn --------------------"
         ssh server2 "/opt/modules/hadoop-3.2.2/sbin/start-yarn.sh"
         echo "-------------------- start historyserver --------------------"
@@ -29,6 +31,9 @@ case $1 in
         ssh server2 "/opt/modules/hadoop-3.2.2/sbin/stop-yarn.sh"
         echo "-------------------- stop hdfs --------------------"
         ssh server1 "/opt/modules/hadoop-3.2.2/sbin/stop-dfs.sh"
+        echo "-------------------- stop httpfs --------------------"
+        ssh server1 "hdfs --daemon stop httpfs"
+
 ;;
 *)
         echo "Input Args Error"
