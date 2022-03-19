@@ -1,0 +1,20 @@
+-lt (<)
+-le (<=)
+-eq (==)
+-gt (>)
+-ge (>=)
+-ne (!=)
+
+-r (read)
+-w (write)
+-x (execute)
+
+-f (file)
+-e (existence)
+-d (directory)
+
+-p (assign input hint)
+-t (assign input max time in sec )
+
+-f (Column number)
+-d (Segmentation)
